@@ -1,13 +1,16 @@
 ﻿using System;
 using System.IO;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace ConsoleApp2
-{
+{  
     /// <summary>
     ///программа, которая собирает базу из людей и выводит в диапозоне возвраста
     /// </summary>
-    class Program
+    public class Program
     {
         /// <summary>
         /// начало запуска программы
@@ -67,7 +70,33 @@ namespace ConsoleApp2
                 if (personas[i].Age()<max && personas[i].Age()>min)
                 personas[i].outInfo();
             }
+            Trace.WriteLine("Trace Information-Product Starting ");
+            Trace.Indent();
+            for (int i = 0; i < n; i++)
+            {
+                Trace.WriteLine("The age is " + personas[i].Age()+"  "+personas[i].Name);
+            }
+           
+            Trace.Unindent();
+            Trace.WriteLine("Trace Information-Product Ending");
+
+            Trace.Flush();
+
+            XmlSerializer formatter = new XmlSerializer(typeof(List<Persona>));
+            using (FileStream fs = new FileStream("functions.xml", FileMode.OpenOrCreate))
+            {
+                formatter.Serialize(fs, personas);
+
+                Console.WriteLine("Объект сериализован");
+            }
+            //Program t = new Program();
+            //t.CreatePO("po.xml");
+            //t.ReadPO("po.xml");
             Console.ReadLine();
         }
+
+
+      
+
     }
 }

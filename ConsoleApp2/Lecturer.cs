@@ -7,8 +7,15 @@ namespace ConsoleApp2
     /// <summary>
     /// Это класс о лекторе
     /// </summary>
-    class Lecturer : Persona
+    [Serializable]
+    public class Lecturer : Persona
     {
+        public Lecturer()
+            :base()
+        {
+            Position = "afs";
+            Faculty = "asfa";
+        }
         /// <summary>
         /// Это конструктор класса
         /// </summary>

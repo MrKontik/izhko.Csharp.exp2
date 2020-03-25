@@ -7,9 +7,14 @@ namespace ConsoleApp2
     /// <summary>
     /// Это класс о Applicant
     /// </summary>
-    class Applicant : Persona
+    [Serializable]
+    public class Applicant : Persona
     {
-
+        public Applicant()
+        : base()
+        {
+            Faculty = "asd";
+        }
         /// <summary>
         /// Это конструктор класса
         /// </summary>

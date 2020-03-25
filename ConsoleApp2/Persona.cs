@@ -1,16 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Xml.Serialization;
 
 namespace ConsoleApp2
 {
+
     /// <summary>
     /// Это абстрактный класс, есть имя и дата рождение
     /// </summary>
     /// <param name="repeat">Имя и дата рождения</param>
     /// <returns>Сам класс</returns>
-    abstract class Persona
+    [Serializable]
+    [XmlInclude(typeof(Student))]
+    [XmlInclude(typeof(Lecturer))]
+    [XmlInclude(typeof(Applicant))]
+    public abstract class Persona
     {
+        public Persona()
+        {
+            Name = "af";
+            DateOfBirth = new DateTime();
+        }
         /// <summary>
         /// Это конструктор абстрактного класса, есть имя и дата рождение
         /// </summary>

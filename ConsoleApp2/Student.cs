@@ -7,8 +7,15 @@ namespace ConsoleApp2
     /// <summary>
     /// Это класс о студенте
     /// </summary>
-    class Student : Persona
+    [Serializable]
+    public class Student : Persona
     {
+        public Student()
+             : base("Иванов" ,"01.01.2000")
+        {
+            Faculty = "def";
+            Cours = 1;
+        }
         /// <summary>
         /// Это конструктор абстрактного класса
         /// </summary>

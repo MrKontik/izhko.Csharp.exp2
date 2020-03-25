@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<ArrayOfPersona xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Persona xsi:type="Applicant">
+    <Name>Горбачев</Name>
+    <DateOfBirth>1976-07-24T00:00:00</DateOfBirth>
+    <Faculty>ГРАЖ</Faculty>
+  </Persona>
+  <Persona xsi:type="Student">
+    <Name>Ижко</Name>
+    <DateOfBirth>1999-02-16T00:00:00</DateOfBirth>
+    <Faculty>ИКНТ</Faculty>
+    <Cours>3</Cours>
+  </Persona>
+  <Persona xsi:type="Lecturer">
+    <Name>Иванова</Name>
+    <DateOfBirth>2001-04-11T00:00:00</DateOfBirth>
+    <Position>президент политеха</Position>
+    <Faculty>Поликек</Faculty>
+    <Experience>32 года</Experience>
+  </Persona>
+</ArrayOfPersona>
